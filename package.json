@@ -1,0 +1,16 @@
+{
+  "name": "udemy-playwright",
+  "version": "1.0.0",
+  "description": "Automated software testing with playwright",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "npx playwright test --config=playwright.config.ts --project=chromium",
+    "test:firefox": "npx playwright test --config=playwright.config.ts --project=firefox",
+    "test:webkit": "npx playwright test --config=playwright.config.ts --project=webkit"
+  },
+  "author": "Maruf Ahmad",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.22.2"
+  }
+}
