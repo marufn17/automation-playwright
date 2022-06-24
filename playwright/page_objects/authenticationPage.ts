@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test";
-export class SignInPage {
+export class AuthenticationPage {
   readonly page: Page;
   readonly createAccountEmailInput: Locator;
   readonly createAccountButton: Locator;
