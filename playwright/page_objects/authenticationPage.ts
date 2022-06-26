@@ -14,9 +14,9 @@ export class AuthenticationPage {
     this.page = page;
     this.createAccountEmailInput = page.locator("#email_create");
     this.createAccountButton = page.locator("#SubmitCreate");
-    this.signInEmailInput = page.locator("");
-    this.signInPasswordInput = page.locator("");
-    this.signInButton = page.locator("");
+    this.signInEmailInput = page.locator("#email");
+    this.signInPasswordInput = page.locator("#passwd");
+    this.signInButton = page.locator("#SubmitLogin");
     this.createAccountError = page.locator("#create_account_error");
   }
   async userEnterInvalidEmailToSignUp() {
