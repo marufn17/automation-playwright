@@ -13,7 +13,7 @@ export class HomePage {
     this.searchIcon = page.locator('[name="submit_search"]');
     this.searchInput = page.locator('[id="search_query_top"]');
     this.contactUs = page.locator("");
-    this.signIn = page.locator("");
+    this.signIn = page.locator('[class="login"]');
     this.cart = page.locator("");
   }
 }
