@@ -7,7 +7,7 @@ test.describe("Home page", () => {
     await page.goto("/");
     homePage = new HomePage(page);
   });
-  test.skip("should load successfully @smoke", async ({ page }) => {
+  test("should load successfully @smoke", async ({ page }) => {
     const title = homePage.headerLogo;
     await expect(title).toBeVisible();
   });

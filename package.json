@@ -6,7 +6,8 @@
   "scripts": {
     "test:chrome": "npx playwright test --config=playwright.config.ts --project=chromium",
     "test:firefox": "npx playwright test --config=playwright.config.ts --project=firefox",
-    "test:webkit": "npx playwright test --config=playwright.config.ts --project=webkit"
+    "test:webkit": "npx playwright test --config=playwright.config.ts --project=webkit",
+    "test":"npx playwright test --config=playwright.config.ts"
   },
   "author": "Maruf Ahmad",
   "license": "ISC",
