@@ -9,6 +9,7 @@ export class AuthenticationPage {
   readonly signInPasswordInput: Locator;
   readonly signInButton: Locator;
   readonly createAccountError: Locator;
+  readonly authenticationFailedWarning: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -18,12 +19,21 @@ export class AuthenticationPage {
     this.signInPasswordInput = page.locator("#passwd");
     this.signInButton = page.locator("#SubmitLogin");
     this.createAccountError = page.locator("#create_account_error");
+    this.authenticationFailedWarning = page.locator(
+      '//p[text()="There is 1 error"]'
+    );
   }
   async userEnterInvalidEmailToSignUp() {
     let name = faker.name.firstName();
     let email = `${name}-${faker.datatype.uuid()}.test.com`;
-    console.log(email);
-    this.createAccountEmailInput.type(email);
-    this.createAccountButton.click();
+    await this.createAccountEmailInput.type(email);
+    await this.createAccountButton.click();
+  }
+  async userEnterInvalidEmailToLogin() {
+    let name = faker.name.firstName();
+    let email = `${name}-${faker.datatype.uuid()}.test.com`;
+    await this.signInEmailInput.type(email);
+    await this.signInPasswordInput.type("testio");
+    await this.signInButton.click();
   }
 }

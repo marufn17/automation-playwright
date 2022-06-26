@@ -17,3 +17,15 @@ test.describe("User sign up", () => {
     await expect(authenticationPage.createAccountError).toBeVisible();
   });
 });
+test.describe("User Login", () => {
+  test.beforeEach(async ({ page }) => {
+    page.goto("/");
+    homePage = new HomePage(page);
+    authenticationPage = new AuthenticationPage(page);
+  });
+  test("should not be able to login with invalid email", async ({ page }) => {
+    await homePage.signIn.click();
+    await authenticationPage.userEnterInvalidEmailToLogin();
+    await expect(authenticationPage.authenticationFailedWarning).toBeVisible();
+  });
+});
