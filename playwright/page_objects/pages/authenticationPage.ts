@@ -36,4 +36,9 @@ export class AuthenticationPage {
     await this.signInPasswordInput.type("testio");
     await this.signInButton.click();
   }
+  async userLogin(data) {
+    await this.signInEmailInput.type(data.username);
+    await this.signInPasswordInput.type(data.password);
+    await this.signInButton.click();
+  }
 }
