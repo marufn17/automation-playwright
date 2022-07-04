@@ -1,5 +1,4 @@
 import { Locator, Page } from "@playwright/test";
-import { faker } from "@faker-js/faker";
 
 export class AccountAndListPage {
   readonly page: Page;
@@ -14,16 +13,5 @@ export class AccountAndListPage {
     this.createAccountButton = page.locator(
       "#nav-flyout-ya-newCust >> text=Start here."
     );
-  }
-
-  async clickOnSignInButton() {
-    //this will implement mouse hover action
-    await this.accountAndList.hover();
-    await this.signInButton.click();
-  }
-
-  async clickOnSignUpButton() {
-    await this.accountAndList.hover();
-    await this.createAccountButton.click();
   }
 }

@@ -2,18 +2,20 @@ import { Locator, Page } from "@playwright/test";
 export class HomePage {
   readonly page: Page;
   readonly headerLogo: Locator;
+  readonly searchDropDown: Locator;
+  readonly babyOption: string;
+  readonly babyOptionLocator: Locator;
+  readonly searchBar: Locator;
   readonly searchIcon: Locator;
-  readonly searchInput: Locator;
-  readonly contactUs: Locator;
-  readonly signIn: Locator;
-  readonly cart: Locator;
+
   constructor(page: Page) {
     this.page = page;
     this.headerLogo = page.locator("#nav-logo-sprites");
-    this.searchIcon = page.locator('[name="submit_search"]');
-    this.searchInput = page.locator('[id="search_query_top"]');
-    this.contactUs = page.locator('[title="Contact Us"]');
-    this.signIn = page.locator('[class="login"]');
-    this.cart = page.locator('[title="View my shopping cart"]');
+    this.searchDropDown = page.locator('select[name="url"]');
+    this.babyOption = "search-alias=baby-products";
+    this.babyOptionLocator = page.locator('//select//option[text()="Baby"]');
+    this.searchBar = page.locator("#twotabsearchtextbox");
+    this.searchIcon = page.locator("#nav-search-submit-button");
   }
+  //  await page.locator('select[name="url"]').selectOption('search-alias=mobile');
 }
