@@ -9,7 +9,7 @@ export class HomePage {
   readonly cart: Locator;
   constructor(page: Page) {
     this.page = page;
-    this.headerLogo = page.locator("#header_logo");
+    this.headerLogo = page.locator("#nav-logo-sprites");
     this.searchIcon = page.locator('[name="submit_search"]');
     this.searchInput = page.locator('[id="search_query_top"]');
     this.contactUs = page.locator('[title="Contact Us"]');
