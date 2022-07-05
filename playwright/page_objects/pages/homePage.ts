@@ -17,5 +17,4 @@ export class HomePage {
     this.searchBar = page.locator("#twotabsearchtextbox");
     this.searchIcon = page.locator("#nav-search-submit-button");
   }
-  //  await page.locator('select[name="url"]').selectOption('search-alias=mobile');
 }

@@ -26,4 +26,18 @@ test.describe("Search", () => {
     await homePage.searchIcon.click();
     await expect(page.url()).toContain("baby-products");
   });
+  //this test case just for reference of using caps letter
+  //Also for single action like Shift + A, we can use page.keyboard.press("Shift+A")
+  test("user type search item in caps letter", async ({ page }) => {
+    await homePage.searchBar.type("SAMSUNG");
+  });
+  /*
+  This test case only for reference of using double click and mouse right click
+  */
+  test("mouse double click and right click", async ({ page }) => {
+    //implement double click
+    await homePage.headerLogo.dblclick();
+    //implement right click
+    await homePage.headerLogo.click({ button: "right" });
+  });
 });
