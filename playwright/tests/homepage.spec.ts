@@ -1,5 +1,6 @@
 import { test, expect, Page } from "@playwright/test";
 import { HomePage } from "../page_objects/pages/homePage";
+import { NavigationPage } from "../page_objects/sections/navigationPage";
 
 test.describe("Home page", () => {
   let homePage: HomePage;
@@ -39,5 +40,15 @@ test.describe("Search", () => {
     await homePage.headerLogo.dblclick();
     //implement right click
     await homePage.headerLogo.click({ button: "right" });
+  });
+  /**
+   * drag and drop example
+   */
+  test("drag and drop", async ({ page }) => {
+    let navigation = new NavigationPage(page);
+    await page.dragAndDrop(
+      'a:has-text("Amazon Basics")',
+      "#twotabsearchtextbox"
+    );
   });
 });
