@@ -1,4 +1,4 @@
-import { test, expect, Page } from "@playwright/test";
+import { test, expect, Page, Browser, BrowserContext } from "@playwright/test";
 import { HomePage } from "../page_objects/pages/homePage";
 import { NavigationPage } from "../page_objects/sections/navigationPage";
 
@@ -50,5 +50,9 @@ test.describe("Search", () => {
       'a:has-text("Amazon Basics")',
       "#twotabsearchtextbox"
     );
+  });
+  test("window handle", async ({ page }) => {
+    let browser: Browser;
+    let context: BrowserContext;
   });
 });
